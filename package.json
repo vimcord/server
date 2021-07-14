@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "GPL version 3",
+  "license": "AGPL version 3",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.13.2"
