@@ -18,4 +18,4 @@ Run `npm i` to install dependencies, then add your mongodb database url at `conf
     "dbURI": "the url from ur mongodb database"
 }
 ```
-Then run `npm run stardev` to start the server at port 3000.
+Then run `npm run startdev` to start the server at port 3000.
