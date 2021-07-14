@@ -10,8 +10,8 @@ const guildSchema = new Schema({
         type: String,
         required: true
     },
-    channels: {
-        type: Array,
+    channelid: {
+        type: String,
         required: true
     }
 })

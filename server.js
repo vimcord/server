@@ -4,19 +4,21 @@ const app = express()
 
 const Guild = require("./models/guild.js")
 
+let dbURI = require("./config.json").dbURI
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }).then(app.listen(3000))
 
-
-app.get("/createguild", (req, res) => {
-    const testguild = new Guild({
-        name: "test",
-        id: "1",
-        channels: ["ok"]
-    })
-    testguild.save()
-    .then((result) => {
-        res.send(result)
-    })
+// A post request to create a guild
+app.post("/createguild", (req, res) => {
+    console.log(req.params)
+    // const testguild = new Guild({
+    //     name: req.params.name,
+    //     id: req.params.id,
+    //     channelid: req.params.channelid
+    // })
+    // testguild.save()
+    // .then((result) => {
+    //     res.send(result)
+    // })
 })
 
 
