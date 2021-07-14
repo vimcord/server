@@ -8,17 +8,23 @@ let dbURI = require("./config.json").dbURI
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }).then(app.listen(3000))
 
 // A post request to create a guild
+// requires a name and id param
 app.post("/createguild", (req, res) => {
-    console.log(req.params)
-    // const testguild = new Guild({
-    //     name: req.params.name,
-    //     id: req.params.id,
-    //     channelid: req.params.channelid
-    // })
-    // testguild.save()
-    // .then((result) => {
-    //     res.send(result)
-    // })
+    const createdguild = new Guild({
+        name: req.query.name,
+        id: req.query.id,
+    })
+    createdguild.save()
+    .then((result) => {
+        res.send(result)
+    })
+})
+
+// A get request to get a guild
+app.get("/:guildid/get", (req, res) => {
+    Guild.find({ id: req.params.guildid }, (err, data) => {
+        res.send(data)
+    })
 })
 
 

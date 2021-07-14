@@ -10,10 +10,7 @@ const guildSchema = new Schema({
         type: String,
         required: true
     },
-    channelid: {
-        type: String,
-        required: true
-    }
+    messages: Array
 })
 
 const guild = mongoose.model("guild", guildSchema)
