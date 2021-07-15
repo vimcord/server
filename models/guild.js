@@ -9,10 +9,6 @@ const guildSchema = new Schema({
     id: {
         type: String,
         required: true
-    },
-    messages: {
-        type: Array,
-        required: true
     }
 })
 

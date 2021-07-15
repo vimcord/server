@@ -3,10 +3,10 @@
 </p>
 
 # WARNING
-Vimcord is nowhere *near* finished. Expect bugs.
+Vimcord is nowhere *near* finished ~~and will most likely never be~~. Expect bugs.
 
-# vimcord
-The server that powers vimcord.
+# Vimcord Server 
+It's server that makes vimcord work. Powered by mongodb, nodejs, expressjs and mongoose.
 
 # Dependencies
 * [NodeJS](https://nodejs.org/en/)
