@@ -10,7 +10,10 @@ const guildSchema = new Schema({
         type: String,
         required: true
     },
-    messages: Array
+    messages: {
+        type: Array,
+        required: true
+    }
 })
 
 const guild = mongoose.model("guild", guildSchema)

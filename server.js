@@ -27,5 +27,21 @@ app.get("/:guildid/get", (req, res) => {
     })
 })
 
+// A post request to create a message
+app.post("/:guildid/:msgid/create", (req, res) => {
+    let msg = {
+        id: req.params.msgid,
+        name: req.query.content,
+        nickname: req.query.nickname,
+        timestamp: Date.now()
+    } 
+    Guild.updateOne({ id: req.params.guildid }, { $push: { "messages": msg}}, () => {})
+    res.send(msg)
+})
+
+app.delete("/:guildid/:msgid/delete", (req, res) => {
+    Guild.update({ id: req.params.guildid }, { $pull: "messages" }, () => {}) // depreced code  fuck yeah
+})
+
 
 
